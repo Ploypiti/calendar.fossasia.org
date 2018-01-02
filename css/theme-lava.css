@@ -92,7 +92,6 @@ img {
 .footer-container,
 .nav-container,
 nav {
-  max-width: 1600px;
   margin: 0px auto;
 }
 .boxed-layout .main-container,
@@ -512,7 +511,7 @@ nav .container {
 }
 .menu li {
   float: left;
-  margin-right: 32px;
+  margin-right: 25px;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -540,12 +539,13 @@ nav .container {
 }
 .nav-dropdown {
   position: absolute;
-  z-index: -1;
-  display: none;
+  z-index: 1;
+  opacity: 0;
   background: rgba(255, 255, 255, 0.9);
   min-width: 200px;
   overflow: hidden;
   margin-top: -2px;
+  -webkit-transition: all 0.3s;
 }
 .nav-dropdown li:first-child {
   margin-top: 12px;
@@ -554,20 +554,41 @@ nav .container {
   opacity: 0;
   margin-right: 0px;
   float: none;
-  margin-bottom: 18px;
+  -webkit-transition: all 0.3s;
 }
 .nav-dropdown li a {
-  padding-bottom: 0px;
-  padding-left: 24px;
+  width: 100%;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 2px;
   color: #333333;
+  -webkit-transition: all 0.2s;
 }
 .nav-dropdown li a:hover {
   border-color: rgba(0, 0, 0, 0);
+  color: white;
 }
-.has-dropdown:hover .nav-dropdown {
-  z-index: 10;
-  max-height: 300px;
+.nav-dropdown li:hover {
+    opacity: 1;
+    background-color: #E12B00;
+}
+
+
+
+.nav-dropdown{
+  display: none;
+  min-height:314px;
+
+}
+
+.has-dropdown:hover > ul{
   display: block;
+}
+
+
+.has-dropdown:hover .nav-dropdown {
+  opacity: 1;
+  max-height: 300px;
 }
 .has-dropdown:hover .nav-dropdown li {
   opacity: 1;
@@ -621,6 +642,16 @@ nav .container {
 }
 .sticky-nav .has-dropdown:before {
   color: #333333;
+}
+.sticky-nav .has-dropdown .nav-dropdown li a:hover
+{
+  border-color: rgba(0,0,0,0);
+  color: white;
+}
+.sticky-nav .has-dropdown .nav-dropdown li:hover
+{
+  opacity: 1;
+  background-color: #E12B00;
 }
 .sidebar-menu-toggle,
 .mobile-menu-toggle {
@@ -804,7 +835,8 @@ nav .container {
   .nav-dropdown {
     position: relative;
     display: none;
-  }
+    min-height: 600px; 
+ }
   .has-dropdown:hover .nav-dropdown {
     display: block;
   }
@@ -1309,6 +1341,7 @@ nav .container {
   width: 50%;
   float: left;
   margin-bottom: 0px;
+  max-width: 300px;
 }
 .speaker-with-bio .speaker-description {
   width: 50%;
@@ -1392,7 +1425,6 @@ nav .container {
   min-width: 150px;
   margin-top: 32px;
   margin-right: 16px;
-  width: 175px;
 }
 @media all and (max-width: 768px) {
   .inline-video iframe {
