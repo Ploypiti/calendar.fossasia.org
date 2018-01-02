@@ -593,6 +593,12 @@ nav .container {
 .has-dropdown:hover .nav-dropdown li {
   opacity: 1;
 }
+.has-dropdown:hover .nav-dropdown li a {
+  padding-left: 24px;
+}
+.has-dropdown a {
+  padding-left: 18px;
+}
 .has-dropdown a {
   padding-left: 18px;
 }
